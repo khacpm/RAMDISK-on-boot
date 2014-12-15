@@ -20,7 +20,7 @@ RAMDisk() {
     chown $st_uid:$st_gid $mntpt
     chmod $st_mode $mntpt
   else
-    touch /Users/khacpm/Desktop/${mntname}.txt
+    touch ~/Desktop/${mntname}.txt
   fi
 }
 
@@ -30,3 +30,10 @@ RAMDisk /Library/Caches 64 SYSCACHES
 RAMDisk ~/Library/Developer/Xcode/DerivedData 2048 DerivedData
 RAMDisk ~/Library/Caches 1024 USERCACHES
 RAMDisk "~/Library/Application\ Support/iPhone\ Simulator" 384 Simulator
+
+hdiutil /private/tmp
+hdiutil /var/run
+hdiutil /Library/Caches
+hdiutil ~/Library/Developer/Xcode/DerivedData
+hdiutil ~/Library/Caches
+hdiutil "~/Library/Application\ Support/iPhone\ Simulator"
